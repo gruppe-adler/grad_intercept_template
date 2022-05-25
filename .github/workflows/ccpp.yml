@@ -13,13 +13,13 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-latest]
         include:
-          - os: windows-latest
+          - os: windows-2022
             buildConfig: release
             displayName: grad_intercept_template_windows
             triplet: x64-windows-static
             configuration: 'x64.*'
             installPath: 'install/bin/'
-          - os: ubuntu-latest
+          - os: ubuntu-20.04
             buildConfig: release
             displayName: grad_intercept_template_ubuntu
             triplet: x64-linux
@@ -52,7 +52,7 @@ jobs:
         vcpkgDirectory: '${{ github.workspace }}/vcpkg'
         vcpkgTriplet: '${{ matrix.triplet }}'
         vcpkgArguments: 'boost-algorithm'
-        vcpkgGitCommitId: 'acb6b10e7fdf5e8519c18398d0b069e1d58ca025'
+        vcpkgGitCommitId: '93b38546e271ac8047a6dd00469f14845beb4642'
 
     # Build with CMake and Ninja
     - name: Run CMake+Ninja
